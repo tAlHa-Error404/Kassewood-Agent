@@ -1,0 +1,378 @@
+@import "tailwindcss";
+
+html {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 16px !important;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ── Custom Animations ───────────────────────────────── */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.18;
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.1);
+    opacity: 0.35;
+  }
+}
+
+@keyframes gentlePulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes dotBounce {
+
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── FAB ring spin ─────────────── */
+
+@keyframes fabRingSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Logo entrance animation ─────────────── */
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(8px);
+    filter: brightness(1.1) blur(2px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-2px);
+    filter: brightness(1.2) blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: brightness(1.1) blur(0);
+  }
+}
+
+/* ── Golden glow pulse behind logo ─────────────── */
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+/* ── Widget slide-up entrance ─────────────── */
+
+@keyframes widgetSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.005);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Message bubble pop-in ─────────────── */
+
+@keyframes messagePop {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Header shine sweep ─────────────── */
+
+@keyframes headerShine {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 200%;
+  }
+}
+
+/* ── Footer nav button bounce ─────────────── */
+
+@keyframes navBounce {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+/* ── Send button pulse on ready ─────────────── */
+
+@keyframes sendPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(196, 167, 125, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(196, 167, 125, 0);
+  }
+}
+
+/* ── Avatar pop-in ─────────────── */
+
+@keyframes avatarPop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Online badge ping animation ─────────────── */
+
+@keyframes onlinePing {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ── Online badge hover ─────────────── */
+
+.chatbot-online-badge {
+  transition: all 0.3s ease;
+}
+
+.chatbot-online-badge:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(34, 197, 94, 0.15);
+}
+
+/* ── Scrollbar ───────────────────────────────── */
+
+.chatbot-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chatbot-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chatbot-scroll::-webkit-scrollbar-thumb {
+  background: rgba(180, 165, 145, 0.3);
+  border-radius: 99px;
+}
+
+.chatbot-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 165, 145, 0.5);
+}
+
+/* Firefox */
+.chatbot-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 165, 145, 0.3) transparent;
+}
+
+/* ── Message entrance animation ─────────────── */
+
+.msg-enter {
+  animation: messagePop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ── Widget entrance class ─────────────── */
+
+.chatbot-widget-enter {
+  animation: widgetSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ── Logo animation class ─────────────── */
+
+.chatbot-logo-enter {
+  animation: logoEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 0.15s;
+}
+
+/* ── Footer nav hover effect ─────────────── */
+
+.chatbot-nav-btn {
+  transition: all 0.25s ease;
+}
+
+.chatbot-nav-btn:hover .chatbot-nav-icon {
+  animation: navBounce 0.4s ease;
+}
+
+/* ── Header shine sweep overlay ─────────────── */
+
+.chatbot-header-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.04) 40%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.04) 60%,
+      transparent 100%);
+  animation: headerShine 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Responsive: Mobile (< 480px) ─────────────── */
+
+@media (max-width: 479px) {
+
+  /* Smaller scrollbar on mobile */
+  .chatbot-scroll::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  /* Faster, subtler animations on mobile */
+  .msg-enter {
+    animation-duration: 0.25s;
+  }
+
+  .chatbot-logo-enter {
+    animation-duration: 0.5s;
+  }
+
+  /* Ensure FAB stays above fullscreen panel */
+  .chatbot-fab-mobile {
+    z-index: 60 !important;
+  }
+}
+
+/* ── Responsive: Tablet (480px - 768px) ─────────────── */
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .msg-enter {
+    animation-duration: 0.3s;
+  }
+}
+
+/* ── Safe area inset for devices with home indicator ─── */
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .chatbot-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
